@@ -190,3 +190,11 @@ console.log(`The ${title} book has ${pagesRange} pages`);
 
 // E: ARROW FUNCTIONS
 /* ARROW FUNCTION EXAMPLE */
+function altGetYear(str) {
+  return str.split("-")[0];
+}
+
+const getYear = (str) => str.split("-")[0];
+console.log(getYear(publicationDate));
+
+// F: SHORT-CIRCUITING AND LOGICAL OPERATORS
