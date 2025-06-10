@@ -179,8 +179,14 @@ updatedBook;
 /* TEMPLATE LITERAL EXAMPLE */
 const summary = `${title} is a ${pages}-page long book written by ${author} published in ${
   publicationDate.split("-")[0]
-}`;
+}. The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie`;
 summary;
 
 // D: TERNARIES INSTEAD OF IF/ELSE STATEMENTS
 /* TERNARY OPERATOR EXAMPLE */
+const pagesRange = pages > 1000 ? "over a thousand" : "less than a thousand";
+pagesRange;
+console.log(`The ${title} book has ${pagesRange} pages`);
+
+// E: ARROW FUNCTIONS
+/* ARROW FUNCTION EXAMPLE */
