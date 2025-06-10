@@ -176,3 +176,11 @@ const updatedBook = {
 updatedBook;
 
 // C: TEMPLATE LITERALS
+/* TEMPLATE LITERAL EXAMPLE */
+const summary = `${title} is a ${pages}-page long book written by ${author} published in ${
+  publicationDate.split("-")[0]
+}`;
+summary;
+
+// D: TERNARIES INSTEAD OF IF/ELSE STATEMENTS
+/* TERNARY OPERATOR EXAMPLE */
