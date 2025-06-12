@@ -144,7 +144,7 @@ function getBook(id) {
 }
 
 // A: DESTRUCTURING
-const book = getBook(1);
+const book = getBook(2);
 book;
 
 /* OBJECT DESTRUCTURING EXAMPLE */
@@ -194,7 +194,20 @@ function altGetYear(str) {
   return str.split("-")[0];
 }
 
-const getYear = (str) => str.split("-")[0];
+const getYear = (str) => str.split("-")[0]; // same output as function above
 console.log(getYear(publicationDate));
 
 // F: SHORT-CIRCUITING AND LOGICAL OPERATORS
+/* SHORT-CIRCUITINGEXAMPLE */
+console.log(hasMovieAdaptation && "This book has a movie");
+
+console.log(true || "Some string");
+console.log(false || "Some string");
+
+console.log(book.translations.spanish);
+const spanishTranslation =
+  book.translations.spanish || "Not translated to Spanish";
+spanishTranslation;
+
+const count = book.reviews.librarything.reviewsCount ?? "No data"; // ?? avoids falsy values unlike || operator
+count;
