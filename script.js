@@ -198,7 +198,7 @@ const getYear = (str) => str.split("-")[0]; // same output as function above
 console.log(getYear(publicationDate));
 
 // F: SHORT-CIRCUITING AND LOGICAL OPERATORS
-/* SHORT-CIRCUITINGEXAMPLE */
+/* SHORT-CIRCUITING EXAMPLE */
 console.log(hasMovieAdaptation && "This book has a movie");
 
 console.log(true || "Some string");
@@ -211,3 +211,13 @@ spanishTranslation;
 
 const count = book.reviews.librarything.reviewsCount ?? "No data"; // ?? avoids falsy values unlike || operator
 count;
+
+// G: OPTIONAL CHAINING OPERATOR
+/* OPTIONAL CHAINING EXAMPLE*/
+function getTotalReviewCount(book) {
+  const goodreads = book.reviews.goodreads.reviewsCount;
+  const librarything = book.reviews.librarything?.reviewsCount ?? 0; // chain  continues even if part before ? does not exist as undefined instead of an error; part after ?? sets default value if bit before does not exist
+  return goodreads + librarything;
+}
+
+console.log(getTotalReviewCount(book));
