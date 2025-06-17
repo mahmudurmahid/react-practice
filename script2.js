@@ -167,3 +167,19 @@ const essentialData = books.map((book) => ({
 }));
 
 essentialData;
+
+/* I: ARRAY FILTER METHOD */
+// ARRAY FILTER METHOD EXAMPLE
+const longBooks = books.filter((book) => book.pages > 500);
+longBooks;
+
+const longBooksWithMovie = books
+  .filter((book) => book.pages > 500)
+  .filter((book) => book.hasMovieAdaptation == true); // we can use multiple filters if needed
+longBooksWithMovie;
+
+// ARRAY FILTER AND MAP METHOD EXAMPLE
+const adventureBooks = books
+  .filter((books) => books.genres.includes("adventure"))
+  .map((book) => book.title);
+adventureBooks;
