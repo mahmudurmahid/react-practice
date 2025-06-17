@@ -175,7 +175,7 @@ longBooks;
 
 const longBooksWithMovie = books
   .filter((book) => book.pages > 500)
-  .filter((book) => book.hasMovieAdaptation == true); // we can use multiple filters if needed
+  .filter((book) => book.hasMovieAdaptation === true); // we can use multiple filters if needed
 longBooksWithMovie;
 
 // ARRAY FILTER AND MAP METHOD EXAMPLE
@@ -198,3 +198,24 @@ testY; // shows ascendingY has mutated testY if slice() not used
 
 const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
 sortedByPages;
+
+/* K: WOKRING WITH IMMUTABLE ARRAYS */
+// IMMUTABLE ARRAYS EXAMPLE - ADDING A BOOK OBJECT TO AN ARRAY
+const newBook = {
+  id: 6,
+  title: "Harry Potter & the Chamber of Secrets",
+  author: "J. K. Rowling",
+};
+
+const booksAfterAdding = [...data, newBook];
+booksAfterAdding;
+
+// IMMUTABLE ARRAYS EXAMPLE - DELETING A BOOK OBJECT TO AN ARRAY
+const booksAfterDeleting = booksAfterAdding.filter((book) => book.id !== 3);
+booksAfterDeleting;
+
+// IMMUTABLE ARRAYS EXAMPLE - UPDATE A BOOK OBJECT TO AN ARRAY
+const booksAfterUpdating = booksAfterDeleting.map((book) =>
+  book.id === 1 ? { ...book, pages: 1210 } : book
+);
+booksAfterUpdating;
