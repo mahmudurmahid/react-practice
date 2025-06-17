@@ -188,3 +188,13 @@ adventureBooks;
 // ARRAY REDUCE METHOD EXAMPLE
 const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0); //  0 is the starting point for the accumulator sum; iterates through all books to adding book by book
 pagesAllBooks;
+
+/* J: ARRAY SORT METHOD */
+// ARRAY SORT METHOD EXAMPLE
+const testY = [3, 7, 1, 9, 6];
+const ascendingY = testY.slice().sort((a, b) => a - b); // change (a - b) to (b - a) for descendingY; use slice() to not mutate testY array
+ascendingY;
+testY; // shows ascendingY has mutated testY if slice() not used
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+sortedByPages;
