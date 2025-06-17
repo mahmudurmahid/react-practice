@@ -183,3 +183,8 @@ const adventureBooks = books
   .filter((books) => books.genres.includes("adventure"))
   .map((book) => book.title);
 adventureBooks;
+
+/* J: ARRAY REDUCE METHOD */
+// ARRAY REDUCE METHOD EXAMPLE
+const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0); //  0 is the starting point for the accumulator sum; iterates through all books to adding book by book
+pagesAllBooks;
